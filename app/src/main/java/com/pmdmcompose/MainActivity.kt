@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -22,12 +23,12 @@ import androidx.compose.ui.unit.dp
 import com.pmdmcompose.ui.theme.PMDMComposeTheme
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.size
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
@@ -51,22 +52,23 @@ fun WhatsApp(modifier: Modifier = Modifier) {
         .fillMaxSize()
         .background(colorResource(R.color.darkGreen))) {
         Row(modifier = modifier.fillMaxWidth()
-            .weight(1f)
+            .weight(0.5f)
+            .border(BorderStroke(1.dp, colorResource(R.color.black)))
             ) {
-            Box(modifier = modifier.fillMaxHeight().weight(2f),
+            Box(modifier = modifier.fillMaxHeight().weight(4f),
                 contentAlignment = Alignment.Center){
                 Text(
                     text = "WhatsApp",
                     color = Color.White,
-                    fontSize = 20.sp
+                    fontSize = 40.sp
                 )
                 //R.string.title
             }
-            Box(modifier = modifier.fillMaxHeight().weight(2f))
+            Box(modifier = modifier.fillMaxHeight().weight(1f))
             Box(modifier = modifier.fillMaxHeight().weight(1f),
                 contentAlignment = Alignment.Center){
                 val imgModifier = Modifier
-                Image(modifier = imgModifier.size(60.dp),
+                Image(modifier = imgModifier.size(40.dp),
                     painter = painterResource(R.drawable.camera),
                     contentDescription = "Image of a camera",
                     contentScale = ContentScale.Fit
@@ -75,7 +77,7 @@ fun WhatsApp(modifier: Modifier = Modifier) {
             Box(modifier = modifier.fillMaxHeight().weight(1f),
                 contentAlignment = Alignment.Center){
                 val imgModifier = Modifier
-                Image(modifier = imgModifier.size(40.dp),
+                Image(modifier = imgModifier.size(20.dp),
                     painter = painterResource(R.drawable.magnifying_glass),
                     contentDescription = "Image of a camera",
                     contentScale = ContentScale.Fit
@@ -95,51 +97,145 @@ fun WhatsApp(modifier: Modifier = Modifier) {
         Row(modifier = modifier.fillMaxWidth().weight(1f)) {
             Box(modifier = modifier.fillMaxHeight().weight(1f),
                 contentAlignment = Alignment.Center){
-                Text(text = "Imagen",
-                    color = Color.White)
+                val imgModifier = Modifier
+                Image(modifier =  imgModifier.size(75.dp),
+                    painter = painterResource(R.drawable.icon),
+                    contentDescription = ""
+                    )
             }
             Box(modifier = modifier.fillMaxHeight().weight(1f),
-                contentAlignment = Alignment.Center){
-                Text(text = "nombre 1",
+                contentAlignment = Alignment.CenterStart){
+                Text(text = stringResource(R.string.name_1),
                     color = Color.White)
-                //R.string.name_1
             }
         }
         Row(modifier = modifier.fillMaxWidth().weight(1f)) {
             Box(modifier = modifier.fillMaxHeight().weight(1f),
                 contentAlignment = Alignment.Center){
-                Text(text = "Imagen",
-                    color = Color.White)
+                val imgModifier = Modifier
+                Image(modifier =  imgModifier.size(75.dp),
+                    painter = painterResource(R.drawable.icon),
+                    contentDescription = ""
+                )
             }
             Box(modifier = modifier.fillMaxHeight().weight(1f),
-                contentAlignment = Alignment.Center){
-                Text(text = "nombre 2",
+                contentAlignment = Alignment.CenterStart){
+                Text(text = stringResource(R.string.name_2),
                     color = Color.White)
-                //R.string.name_2
             }
         }
         Row(modifier = modifier.fillMaxWidth().weight(1f)) {
             Box(modifier = modifier.fillMaxHeight().weight(1f),
                 contentAlignment = Alignment.Center){
-                Text(text = "Imagen",
-                    color = Color.White)
+                val imgModifier = Modifier
+                Image(modifier =  imgModifier.size(75.dp),
+                    painter = painterResource(R.drawable.icon),
+                    contentDescription = ""
+                )
             }
             Box(modifier = modifier.fillMaxHeight().weight(1f),
-                contentAlignment = Alignment.Center){
-                Text(text = "nombre 3",
+                contentAlignment = Alignment.CenterStart){
+                Text(text = stringResource(R.string.name_3),
                     color = Color.White)
-                //R.string.name_3
             }
         }
         Row(modifier = modifier.fillMaxWidth().weight(1f)) {
             Box(modifier = modifier.fillMaxHeight().weight(1f),
                 contentAlignment = Alignment.Center){
-                Text(text = "Imagen",
+                val imgModifier = Modifier
+                Image(modifier =  imgModifier.size(75.dp),
+                    painter = painterResource(R.drawable.icon),
+                    contentDescription = ""
+                )
+            }
+            Box(modifier = modifier.fillMaxHeight().weight(1f),
+                contentAlignment = Alignment.CenterStart){
+                Text(text = stringResource(R.string.name_4),
+                    color = Color.White)
+            }
+        }
+        Row(modifier = modifier.fillMaxWidth().weight(1f)) {
+            Box(modifier = modifier.fillMaxHeight().weight(1f),
+                contentAlignment = Alignment.Center){
+                val imgModifier = Modifier
+                Image(modifier =  imgModifier.size(75.dp),
+                    painter = painterResource(R.drawable.icon),
+                    contentDescription = ""
+                )
+            }
+            Box(modifier = modifier.fillMaxHeight().weight(1f),
+                contentAlignment = Alignment.CenterStart){
+                Text(text = stringResource(R.string.name_5),
+                    color = Color.White)
+            }
+        }
+        Row(modifier = modifier.fillMaxWidth().weight(1f)) {
+            Box(modifier = modifier.fillMaxHeight().weight(1f),
+                contentAlignment = Alignment.Center){
+                val imgModifier = Modifier
+                Image(modifier =  imgModifier.size(75.dp),
+                    painter = painterResource(R.drawable.icon),
+                    contentDescription = ""
+                )
+            }
+            Box(modifier = modifier.fillMaxHeight().weight(1f),
+                contentAlignment = Alignment.CenterStart){
+                Text(text = stringResource(R.string.name_6),
+                    color = Color.White)
+            }
+        }
+        Row(modifier = modifier.fillMaxWidth().weight(1f)) {
+            Box(modifier = modifier.fillMaxHeight().weight(1f),
+                contentAlignment = Alignment.Center){
+                val imgModifier = Modifier
+                Image(modifier =  imgModifier.size(75.dp),
+                    painter = painterResource(R.drawable.icon),
+                    contentDescription = ""
+                )
+            }
+            Box(modifier = modifier.fillMaxHeight().weight(1f),
+                contentAlignment = Alignment.CenterStart){
+                Text(text = stringResource(R.string.name_7),
+                    color = Color.White)
+            }
+        }
+        Row(modifier = modifier.fillMaxWidth().weight(1f)) {
+            Box(modifier = modifier.fillMaxHeight().weight(1f),
+                contentAlignment = Alignment.Center){
+                val imgModifier = Modifier
+                Image(modifier =  imgModifier.size(75.dp),
+                    painter = painterResource(R.drawable.icon),
+                    contentDescription = ""
+                )
+            }
+            Box(modifier = modifier.fillMaxHeight().weight(1f),
+                contentAlignment = Alignment.CenterStart){
+                Text(text = stringResource(R.string.name_8),
+                    color = Color.White)
+            }
+        }
+
+        Row(modifier = modifier.fillMaxWidth()
+            .weight(1f)
+            .border(BorderStroke(1.dp, colorResource(R.color.black)))) {
+            Box(modifier = modifier.fillMaxHeight().weight(1f),
+                contentAlignment = Alignment.Center){
+                Text(text = "Chats",
                     color = Color.White)
             }
             Box(modifier = modifier.fillMaxHeight().weight(1f),
                 contentAlignment = Alignment.Center){
-                Text(text = "nombre 4",
+                Text(text = "Updates",
+                    color = Color.White)
+            }
+            Box(modifier = modifier.fillMaxHeight().weight(1f),
+                contentAlignment = Alignment.Center){
+                Text(text = "Communities",
+                    color = Color.White)
+            }
+            Box(modifier = modifier.fillMaxHeight().weight(1f),
+                contentAlignment = Alignment.Center){
+                Text(text = "Calls",
                     color = Color.White)
             }
         }
