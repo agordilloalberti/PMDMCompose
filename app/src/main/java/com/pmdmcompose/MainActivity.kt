@@ -30,6 +30,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
+import androidx.constraintlayout.widget.ConstraintLayout
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -218,26 +219,45 @@ fun WhatsApp(modifier: Modifier = Modifier) {
         Row(modifier = modifier.fillMaxWidth()
             .weight(1f)
             .border(BorderStroke(1.dp, colorResource(R.color.black)))) {
-            Box(modifier = modifier.fillMaxHeight().weight(1f),
-                contentAlignment = Alignment.Center){
+            Column(modifier = modifier.fillMaxHeight().weight(1f)){
+                val imgModifier = Modifier
+                Image(modifier =  imgModifier.size(55.dp),
+                    painter = painterResource(R.drawable.chats),
+                    contentDescription = "")
                 Text(text = "Chats",
                     color = Color.White)
             }
-            Box(modifier = modifier.fillMaxHeight().weight(1f),
-                contentAlignment = Alignment.Center){
+            Column(modifier = modifier.fillMaxHeight().weight(1f)){
+                val imgModifier = Modifier
+                Image(modifier =  imgModifier.size(55.dp),
+                    painter = painterResource(R.drawable.updates),
+                    contentDescription = "")
                 Text(text = "Updates",
                     color = Color.White)
             }
-            Box(modifier = modifier.fillMaxHeight().weight(1f),
-                contentAlignment = Alignment.Center){
+            Column(modifier = modifier.fillMaxHeight().weight(1f)){
+                val imgModifier = Modifier
+                Image(modifier =  imgModifier.size(50.dp),
+                    painter = painterResource(R.drawable.communities),
+                    contentDescription = "")
                 Text(text = "Communities",
                     color = Color.White)
             }
-            Box(modifier = modifier.fillMaxHeight().weight(1f),
-                contentAlignment = Alignment.Center){
-                Text(text = "Calls",
-                    color = Color.White)
-            }
+
+            //modifier = modifier.fillMaxSize()) {
+            //                val (img, text) = createRefs()
+            //                Box() {
+            //                    val imgModifier = Modifier
+            //                    Image(
+            //                        modifier = imgModifier.size(55.dp),
+            //                        painter = painterResource(R.drawable.calls),
+            //                        contentDescription = ""
+            //                    )
+            //                }
+            //                Box() { Text (text = "Calls",
+            //                color = Color.White)
+            //                }
+            //ConstraintLayout
         }
     }
 }
