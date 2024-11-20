@@ -5,8 +5,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.pmdmcompose.screens.Home
 import com.pmdmcompose.screens.Chat
+import com.pmdmcompose.screens.Home
 
 @Composable
 fun AppNavigation(modifier: Modifier) {
@@ -18,7 +18,11 @@ fun AppNavigation(modifier: Modifier) {
         composable(
             AppScreen.Chat.route)
         {
-            Chat(navControlador,modifier)
+            Chat(
+                navControlador,
+                modifier
+                //,contacto
+            )
         }
     }
 }
