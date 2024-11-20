@@ -30,6 +30,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import com.pmdmcompose.navegacion.AppNavigation
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,159 +39,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             PMDMComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    val nombres = listOf("Roberto","Luih","Adrián","Álvaro","Raul","Hugo","Emilia","Lucia")
-                    WhatsApp(modifier = Modifier.padding(innerPadding),nombres)
+                    AppNavigation(Modifier.padding(innerPadding))
                 }
             }
-        }
-    }
-}
-
-@Composable
-fun WhatsApp(modifier: Modifier = Modifier, contactos: List<String>) {
-
-    Box(modifier = Modifier.background(colorResource(R.color.darkGreen))) {
-        Column(
-            modifier = modifier
-                .fillMaxSize()
-        ) {
-            Row(
-                modifier = Modifier.fillMaxWidth()
-                    .weight(0.5f)
-                    .border(BorderStroke(1.dp, colorResource(R.color.black)))
-            ) {
-                Box(
-                    modifier = Modifier.fillMaxHeight().weight(4f),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(
-                        text = "WhatsApp",
-                        color = Color.White,
-                        fontSize = 40.sp
-                    )
-                }
-                Spacer(modifier = Modifier.weight(1f))
-                Box(
-                    modifier = Modifier.fillMaxHeight().weight(1f),
-                    contentAlignment = Alignment.Center
-                ) {
-                    val imgModifier = Modifier
-                    Image(
-                        modifier = imgModifier.size(40.dp),
-                        painter = painterResource(R.drawable.camera),
-                        contentDescription = "",
-                        contentScale = ContentScale.Fit
-                    )
-                }
-                Box(
-                    modifier = Modifier.fillMaxHeight().weight(1f),
-                    contentAlignment = Alignment.Center
-                ) {
-                    val imgModifier = Modifier
-                    Image(
-                        modifier = imgModifier.size(20.dp),
-                        painter = painterResource(R.drawable.magnifying_glass),
-                        contentDescription = "",
-                        contentScale = ContentScale.Fit
-                    )
-
-                }
-                Box(
-                    modifier = Modifier.fillMaxHeight().weight(1f),
-                    contentAlignment = Alignment.Center
-                ) {
-                    val imgModifier = Modifier
-                    Image(
-                        modifier = imgModifier.size(20.dp),
-                        painter = painterResource(R.drawable.triple_point),
-                        contentDescription = "",
-                        contentScale = ContentScale.Fit
-                    )
-                }
-            }
-            for (contacto in contactos) {
-                AddContacto(contacto, Modifier.fillMaxWidth().weight(1f))
-            }
-
-            Row(
-                modifier = Modifier.fillMaxWidth()
-                    .weight(1f)
-                    .border(BorderStroke(1.dp, colorResource(R.color.black)))
-            ) {
-                Column(modifier = Modifier.fillMaxHeight().weight(1f).alignByBaseline()) {
-                    val imgModifier = Modifier
-                    Image(
-                        modifier = imgModifier.size(55.dp).align(Alignment.CenterHorizontally),
-                        painter = painterResource(R.drawable.chats),
-                        contentDescription = ""
-                    )
-                    Text(
-                        modifier = Modifier.align(Alignment.CenterHorizontally),
-                        text = "Chats",
-                        color = Color.White
-                    )
-                }
-                Column(modifier = Modifier.fillMaxHeight().weight(1f).alignByBaseline()) {
-                    val imgModifier = Modifier
-                    Image(
-                        modifier = imgModifier.size(55.dp).align(Alignment.CenterHorizontally),
-                        painter = painterResource(R.drawable.updates),
-                        contentDescription = ""
-                    )
-                    Text(
-                        modifier = Modifier.align(Alignment.CenterHorizontally),
-                        text = "Updates",
-                        color = Color.White
-                    )
-                }
-                Column(modifier = Modifier.fillMaxHeight().weight(1f).alignByBaseline()) {
-                    val imgModifier = Modifier
-                    Image(
-                        modifier = imgModifier.size(50.dp).align(Alignment.CenterHorizontally),
-                        painter = painterResource(R.drawable.communities),
-                        contentDescription = ""
-                    )
-                    Text(
-                        modifier = Modifier.align(Alignment.CenterHorizontally),
-                        text = "Communities",
-                        color = Color.White
-                    )
-                }
-
-                Column(modifier = Modifier.fillMaxHeight().weight(1f).alignByBaseline()) {
-                    val imgModifier = Modifier
-                    Image(
-                        modifier = imgModifier.size(50.dp).align(Alignment.CenterHorizontally),
-                        painter = painterResource(R.drawable.calls),
-                        contentDescription = ""
-                    )
-                    Text(
-                        modifier = Modifier.align(Alignment.CenterHorizontally),
-                        text = "Calls",
-                        color = Color.White,
-                        textAlign = TextAlign.Center
-                    )
-                }
-            }
-        }
-    }
-}
-
-@Composable
-fun AddContacto(contacto: String,modifier: Modifier) {
-    Row(modifier = modifier) {
-        Box(modifier = modifier.fillMaxHeight().weight(1f),
-            contentAlignment = Alignment.Center){
-            val imgModifier = Modifier
-            Image(modifier =  imgModifier.size(75.dp),
-                painter = painterResource(R.drawable.icon),
-                contentDescription = ""
-            )
-        }
-        Box(modifier = modifier.fillMaxHeight().weight(1f),
-            contentAlignment = Alignment.CenterStart){
-            Text(text = contacto,
-                color = Color.White)
         }
     }
 }
